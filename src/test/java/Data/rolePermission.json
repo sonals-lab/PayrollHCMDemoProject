@@ -1,0 +1,39 @@
+{
+  "Admin": {
+    "description": "Full access to system configuration and user management.",
+    "permissions": [
+      "read:any",
+      "write:any",
+      "delete:any",
+      "manage:roles",
+      "export:data"
+    ]
+  },
+  "HR": {
+    "description": "Manage employee records, run payroll, view confidential HR data.",
+    "permissions": [
+      "read:employees",
+      "write:employees",
+      "run:payroll",
+      "export:hr_reports"
+    ]
+  },
+  "Manager": {
+    "description": "View and manage team members, approve time off and expenses.",
+    "permissions": [
+      "read:team",
+      "approve:timeoff",
+      "approve:expenses",
+      "view:reports"
+    ]
+  },
+  "Employee": {
+    "description": "Basic access to own records and self-service features.",
+    "permissions": [
+      "read:self",
+      "write:self",
+      "submit:timeoff",
+      "view:paystub"
+    ]
+  }
+}

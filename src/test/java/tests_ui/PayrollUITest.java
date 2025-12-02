@@ -1,5 +1,5 @@
 
-package tests;
+package tests_ui;
 
 import base.BaseTest;
 import pages.LoginPage;

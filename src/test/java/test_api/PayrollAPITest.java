@@ -1,8 +1,9 @@
 
-package tests;
+package test_api;
 
 import io.restassured.RestAssured;
 import org.testng.annotations.Test;
+
 import static org.hamcrest.Matchers.*;
 
 public class PayrollAPITest {
@@ -11,10 +12,10 @@ public class PayrollAPITest {
     public void testCreateEmployee() {
         RestAssured.given()
                 .contentType("application/json")
-                .body("{"name": "John", "salary": 45000}")
-        .when()
+                .body("{\"name\": \"John\", \"salary\": 45000}")
+                .when()
                 .post("https://dummy-api.com/employees")
-        .then()
+                .then()
                 .statusCode(201)
                 .body("name", equalTo("John"));
     }
@@ -22,10 +23,11 @@ public class PayrollAPITest {
     @Test
     public void testRunPayroll() {
         RestAssured.given()
-        .when()
+                .when()
                 .post("https://dummy-api.com/runPayroll")
-        .then()
+                .then()
                 .statusCode(200)
                 .body("status", equalTo("Success"));
     }
 }
+
